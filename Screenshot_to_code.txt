@@ -1,0 +1,39 @@
+git clone https://github.com/abi/screenshot-to-code
+
+pip install poetry==1.8.4
+
+cd screenshot-to-code/backend
+mkdir backend # yes, inside backend
+mv *.py backend/
+poetry install
+poetry shell
+cd backend # yes, backend/backend
+poetry run uvicorn main:app --reload --port 7001
+
+#Open another terminal and install yarn
+#In windows:
+
+curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
+echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
+sudo apt update
+sudo apt install yarn
+
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
+nvm install 18
+nvm alias default 18
+yarn global add vite
+yarn add vite --dev
+
+#In Mac
+brew install yarn
+
+#and then run
+cd screenshot-to-code/frontend
+yarn
+yarn dev
+
+
+Sources:
+https://github.com/abi/screenshot-to-code
+https://github.com/abi/screenshot-to-code/issues/3#issuecomment-1814777959
+https://github.com/yarnpkg/yarn/issues/2821

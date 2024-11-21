@@ -1,0 +1,350 @@
+To further improve the app to match the original video, I will:
+
+1. Adjust colors, spacing, and fonts to more closely match the original design.
+2. Add the correct icons and logos.
+3. Implement the trending sort functionality.
+4. Add a details page for the microsoft/OmniParser model that appears when clicked.
+5. Ensure the search clears properly and re-displays all apps.
+6. Use more realistic placeholder data that matches the original app.
+7. Make the app responsive so the layout adjusts on smaller screens.
+<html>
+ <!DOCTYPE html>
+ <html>
+  <head>
+   <script src="https://cdn.tailwindcss.com">
+   </script>
+   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+   <script src="https://code.jquery.com/jquery-3.7.0.min.js">
+   </script>
+  </head>
+  <body>
+   <div class="flex flex-col h-screen">
+    <header class="bg-gray-900 text-white px-6 py-3 flex items-center border-b border-gray-800">
+     <img alt="Hugging Face" class="w-8 h-8 mr-4" src="https://huggingface.co/front/assets/huggingface_logo-noborder.svg"/>
+     <h1 class="text-2xl font-bold mr-8">
+      Spaces
+     </h1>
+     <p class="mr-8 text-lg text-gray-400">
+      Discover amazing AI apps made by the community!
+     </p>
+     <a class="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-md text-sm mr-4" href="#">
+      Create new Space
+     </a>
+     <a class="mr-4 hover:text-gray-300" href="#">
+      Models
+     </a>
+     <a class="mr-4 hover:text-gray-300" href="#">
+      Datasets
+     </a>
+     <a class="hover:text-gray-300" href="#">
+      Spaces
+     </a>
+     <div class="flex-grow">
+     </div>
+     <div class="relative">
+      <input class="bg-gray-800 text-white px-4 py-2 rounded-md w-80 text-sm pr-8" id="searchInput" placeholder="Search spaces" type="text"/>
+      <i class="fas fa-search absolute right-0 top-0 mt-3 mr-3 text-gray-400">
+      </i>
+     </div>
+    </header>
+    <div class="flex-grow overflow-hidden flex">
+     <div class="bg-gray-900 border-r border-gray-800 text-white w-64 p-4 overflow-y-auto">
+      <h2 class="text-lg font-bold mb-4">
+       Tasks
+      </h2>
+      <ul class="mb-8">
+       <li class="mb-3 hover:text-blue-400 cursor-pointer flex items-center">
+        <i class="fas fa-microchip mr-2">
+        </i>
+        <span>
+         Multimodal
+        </span>
+       </li>
+       <li class="mb-3 hover:text-blue-400 cursor-pointer flex items-center">
+        <i class="fas fa-image mr-2">
+        </i>
+        <span>
+         Image-Text-to-Text
+        </span>
+       </li>
+       <li class="mb-3 hover:text-blue-400 cursor-pointer flex items-center">
+        <i class="fas fa-question-circle mr-2">
+        </i>
+        <span>
+         Visual Question Answering
+        </span>
+       </li>
+       <!-- more task items -->
+      </ul>
+      <h2 class="text-lg font-bold mb-4">
+       Libraries
+      </h2>
+      <ul class="mb-8">
+       <li class="mb-3 hover:text-blue-400 cursor-pointer flex items-center">
+        <i class="fas fa-terminal mr-2">
+        </i>
+        <span>
+         Gradio
+        </span>
+       </li>
+       <li class="mb-3 hover:text-blue-400 cursor-pointer flex items-center">
+        <i class="fas fa-terminal mr-2">
+        </i>
+        <span>
+         Streamlit
+        </span>
+       </li>
+       <!-- more library items -->
+      </ul>
+      <h2 class="text-lg font-bold mb-4">
+       Models
+      </h2>
+      <ul>
+       <li class="mb-3 hover:text-blue-400 cursor-pointer flex items-center" id="omniParserModel">
+        <i class="fas fa-brain mr-2">
+        </i>
+        <span>
+         microsoft/OmniParser
+        </span>
+       </li>
+       <li class="mb-3 hover:text-blue-400 cursor-pointer flex items-center">
+        <i class="fas fa-brain mr-2">
+        </i>
+        <span>
+         genmo/mochi-1-preview
+        </span>
+       </li>
+       <li class="mb-3 hover:text-blue-400 cursor-pointer flex items-center">
+        <i class="fas fa-brain mr-2">
+        </i>
+        <span>
+         stabilityai/stable-diffusion-3.5-medium
+        </span>
+       </li>
+       <!-- more model items -->
+      </ul>
+     </div>
+     <div class="flex-grow p-6 overflow-y-auto">
+      <div class="flex justify-between items-center mb-6">
+       <h2 class="text-2xl font-bold">
+        Spaces of the week
+       </h2>
+       <i class="fas fa-fire text-red-500">
+       </i>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
+       <div class="bg-white rounded-lg shadow-md p-4">
+        <img alt="Stable Diffusion 3.5 Large app allowing users to generate images using the Stable Diffusion 3.5 model with various settings and options." class="w-full h-40 object-cover mb-4 rounded-md" height="400" src="https://oaidalleapiprodscus.blob.core.windows.net/private/org-wAWW9zoBnTeJ4DpbNYieMwU9/user-s3OeofjXigDPIRAgct8aXLk2/img-5yOJEdzjffV7FO2EcJoD51zp.png?st=2024-11-01T09%3A30%3A35Z&amp;se=2024-11-01T11%3A30%3A35Z&amp;sp=r&amp;sv=2024-08-04&amp;sr=b&amp;rscd=inline&amp;rsct=image/png&amp;skoid=d505667d-d6c1-4a0a-bac7-5c84a87759f8&amp;sktid=a48cca56-e6da-484e-a814-9c849652bcb3&amp;skt=2024-11-01T01%3A19%3A49Z&amp;ske=2024-11-02T01%3A19%3A49Z&amp;sks=b&amp;skv=2024-08-04&amp;sig=vMaOTuE2kxKL/wLzI6IEY8RCZ4gYGsyo00tYM4SVfi0%3D" width="600"/>
+        <div class="flex items-center justify-between mb-2">
+         <h3 class="text-xl font-bold">
+          Stable Diffusion 3.5 Large
+         </h3>
+         <div class="flex items-center">
+          <i class="fas fa-heart mr-2 text-red-500">
+          </i>
+          <span class="text-gray-500">
+           705
+          </span>
+         </div>
+        </div>
+        <p class="text-gray-500 text-sm mb-3">
+         Generate images with SD3.5
+        </p>
+        <div class="flex items-center">
+         <img alt="Avatar of stabilityai" class="w-6 h-6 rounded-full mr-2" height="30" src="https://oaidalleapiprodscus.blob.core.windows.net/private/org-wAWW9zoBnTeJ4DpbNYieMwU9/user-s3OeofjXigDPIRAgct8aXLk2/img-1fuCK7v0rQ912mV1wtLnxx6W.png?st=2024-11-01T09%3A30%3A33Z&amp;se=2024-11-01T11%3A30%3A33Z&amp;sp=r&amp;sv=2024-08-04&amp;sr=b&amp;rscd=inline&amp;rsct=image/png&amp;skoid=d505667d-d6c1-4a0a-bac7-5c84a87759f8&amp;sktid=a48cca56-e6da-484e-a814-9c849652bcb3&amp;skt=2024-11-01T01%3A11%3A11Z&amp;ske=2024-11-02T01%3A11%3A11Z&amp;sks=b&amp;skv=2024-08-04&amp;sig=cE7mlCgWQEzHsk3ZMfX2C7FFZpY5bJWB1qTEl9iC2wk%3D" width="30"/>
+         <span>
+          stabilityai
+         </span>
+         <span class="ml-auto text-gray-500 text-xs">
+          10 days ago
+         </span>
+        </div>
+       </div>
+       <div class="bg-white rounded-lg shadow-md p-4">
+        <img alt="IC Light V2 app interface" class="w-full h-40 object-cover mb-4 rounded-md" src="https://placehold.co/600x400.png?text=IC+Light+V2+app+interface"/>
+        <div class="flex items-center justify-between mb-2">
+         <h3 class="text-xl font-bold">
+          IC Light V2
+         </h3>
+         <div class="flex items-center">
+          <i class="fas fa-heart mr-2 text-red-500">
+          </i>
+          <span class="text-gray-500">
+           384
+          </span>
+         </div>
+        </div>
+        <div class="flex items-center">
+         <img alt="Avatar of lllyasviel" class="w-6 h-6 rounded-full mr-2" height="30" src="https://oaidalleapiprodscus.blob.core.windows.net/private/org-wAWW9zoBnTeJ4DpbNYieMwU9/user-s3OeofjXigDPIRAgct8aXLk2/img-0tOtlAix8Od7ptYAnRtwVYqn.png?st=2024-11-01T09%3A30%3A42Z&amp;se=2024-11-01T11%3A30%3A42Z&amp;sp=r&amp;sv=2024-08-04&amp;sr=b&amp;rscd=inline&amp;rsct=image/png&amp;skoid=d505667d-d6c1-4a0a-bac7-5c84a87759f8&amp;sktid=a48cca56-e6da-484e-a814-9c849652bcb3&amp;skt=2024-11-01T01%3A28%3A21Z&amp;ske=2024-11-02T01%3A28%3A21Z&amp;sks=b&amp;skv=2024-08-04&amp;sig=J6/e0vn5jbuxnkowAyemno/dpORbjpatjIMaGdNI1Ao%3D" width="30"/>
+         <span>
+          lllyasviel
+         </span>
+         <span class="ml-auto text-gray-500 text-xs">
+          5 days ago
+         </span>
+        </div>
+       </div>
+       <div class="bg-white rounded-lg shadow-md p-4">
+        <img alt="Allegro V2 app using Apache licensed advanced video generation model" class="w-full h-40 object-cover mb-4 rounded-md" src="https://placehold.co/600x400.png?text=Allegro+V2+app+using+Apache+licensed+advanced+video+generation+model"/>
+        <div class="flex items-center justify-between mb-2">
+         <h3 class="text-xl font-bold">
+          Allegro V2
+         </h3>
+         <div class="flex items-center">
+          <i class="fas fa-heart mr-2 text-red-500">
+          </i>
+          <span class="text-gray-500">
+           52
+          </span>
+         </div>
+        </div>
+        <p class="text-gray-500 text-sm mb-3">
+         Apache Licensed Advanced Video Generation Model
+        </p>
+        <div class="flex items-center">
+         <img alt="Avatar of fffiloni" class="w-6 h-6 rounded-full mr-2" height="30" src="https://oaidalleapiprodscus.blob.core.windows.net/private/org-wAWW9zoBnTeJ4DpbNYieMwU9/user-s3OeofjXigDPIRAgct8aXLk2/img-B7lPuLrcCE5jPzjxAlVBtv0M.png?st=2024-11-01T09%3A30%3A36Z&amp;se=2024-11-01T11%3A30%3A36Z&amp;sp=r&amp;sv=2024-08-04&amp;sr=b&amp;rscd=inline&amp;rsct=image/png&amp;skoid=d505667d-d6c1-4a0a-bac7-5c84a87759f8&amp;sktid=a48cca56-e6da-484e-a814-9c849652bcb3&amp;skt=2024-11-01T01%3A30%3A42Z&amp;ske=2024-11-02T01%3A30%3A42Z&amp;sks=b&amp;skv=2024-08-04&amp;sig=t2GZ2yHJVrEbPnZGnWnJPtTPFTWUm0MBRRoQPcb%2B2yA%3D" width="30"/>
+         <span>
+          fffiloni
+         </span>
+         <span class="ml-auto text-gray-500 text-xs">
+          4 days ago
+         </span>
+        </div>
+       </div>
+       <div class="bg-white rounded-lg shadow-md p-4">
+        <img alt="Aya Expanse app interface" class="w-full h-40 object-cover mb-4 rounded-md" src="https://placehold.co/600x400.png?text=Aya+Expanse+app+interface"/>
+        <div class="flex items-center justify-between mb-2">
+         <h3 class="text-xl font-bold">
+          Aya Expanse
+         </h3>
+         <div class="flex items-center">
+          <i class="fas fa-heart mr-2 text-red-500">
+          </i>
+          <span class="text-gray-500">
+           163
+          </span>
+         </div>
+        </div>
+        <div class="flex items-center">
+         <img alt="Avatar of CohereForAI" class="w-6 h-6 rounded-full mr-2" src="https://placehold.co/30x30"/>
+         <span>
+          CohereForAI
+         </span>
+         <span class="ml-auto text-gray-500 text-xs">
+          3 days ago
+         </span>
+        </div>
+       </div>
+      </div>
+      <div class="flex justify-between items-center mb-6">
+       <h2 class="text-2xl font-bold">
+        All running apps, trending first
+       </h2>
+       <div class="flex items-center">
+        <i class="fas fa-sort-amount-up mr-2">
+        </i>
+        <span>
+         Sort Trending
+        </span>
+       </div>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4" id="allApps">
+       <div class="bg-white rounded-lg shadow-md p-4">
+        <img alt="Stable Diffusion 3.5 Large app allowing users to generate images using the Stable Diffusion 3.5 model with various settings and options." class="w-full h-40 object-cover mb-4 rounded-md" height="400" src="https://oaidalleapiprodscus.blob.core.windows.net/private/org-wAWW9zoBnTeJ4DpbNYieMwU9/user-s3OeofjXigDPIRAgct8aXLk2/img-5yOJEdzjffV7FO2EcJoD51zp.png?st=2024-11-01T09%3A30%3A35Z&amp;se=2024-11-01T11%3A30%3A35Z&amp;sp=r&amp;sv=2024-08-04&amp;sr=b&amp;rscd=inline&amp;rsct=image/png&amp;skoid=d505667d-d6c1-4a0a-bac7-5c84a87759f8&amp;sktid=a48cca56-e6da-484e-a814-9c849652bcb3&amp;skt=2024-11-01T01%3A19%3A49Z&amp;ske=2024-11-02T01%3A19%3A49Z&amp;sks=b&amp;skv=2024-08-04&amp;sig=vMaOTuE2kxKL/wLzI6IEY8RCZ4gYGsyo00tYM4SVfi0%3D" width="600"/>
+        <div class="flex items-center justify-between mb-2">
+         <h3 class="text-xl font-bold">
+          Stable Diffusion 3.5 Large
+         </h3>
+         <div class="flex items-center">
+          <i class="fas fa-heart mr-2 text-red-500">
+          </i>
+          <span class="text-gray-500">
+           705
+          </span>
+         </div>
+        </div>
+        <p class="text-gray-500 text-sm mb-3">
+         Generate images with SD3.5
+        </p>
+        <div class="flex items-center">
+         <img alt="Avatar of stabilityai" class="w-6 h-6 rounded-full mr-2" height="30" src="https://oaidalleapiprodscus.blob.core.windows.net/private/org-wAWW9zoBnTeJ4DpbNYieMwU9/user-s3OeofjXigDPIRAgct8aXLk2/img-1fuCK7v0rQ912mV1wtLnxx6W.png?st=2024-11-01T09%3A30%3A33Z&amp;se=2024-11-01T11%3A30%3A33Z&amp;sp=r&amp;sv=2024-08-04&amp;sr=b&amp;rscd=inline&amp;rsct=image/png&amp;skoid=d505667d-d6c1-4a0a-bac7-5c84a87759f8&amp;sktid=a48cca56-e6da-484e-a814-9c849652bcb3&amp;skt=2024-11-01T01%3A11%3A11Z&amp;ske=2024-11-02T01%3A11%3A11Z&amp;sks=b&amp;skv=2024-08-04&amp;sig=cE7mlCgWQEzHsk3ZMfX2C7FFZpY5bJWB1qTEl9iC2wk%3D" width="30"/>
+         <span>
+          stabilityai
+         </span>
+         <span class="ml-auto text-gray-500 text-xs">
+          10 days ago
+         </span>
+        </div>
+       </div>
+       <div class="bg-white rounded-lg shadow-md p-4">
+        <img alt="IC Light V2 app interface" class="w-full h-40 object-cover mb-4 rounded-md" src="https://placehold.co/600x400.png?text=IC+Light+V2+app+interface"/>
+        <div class="flex items-center justify-between mb-2">
+         <h3 class="text-xl font-bold">
+          IC Light V2
+         </h3>
+         <div class="flex items-center">
+          <i class="fas fa-heart mr-2 text-red-500">
+          </i>
+          <span class="text-gray-500">
+           384
+          </span>
+         </div>
+        </div>
+        <div class="flex items-center">
+         <img alt="Avatar of lllyasviel" class="w-6 h-6 rounded-full mr-2" height="30" src="https://oaidalleapiprodscus.blob.core.windows.net/private/org-wAWW9zoBnTeJ4DpbNYieMwU9/user-s3OeofjXigDPIRAgct8aXLk2/img-0tOtlAix8Od7ptYAnRtwVYqn.png?st=2024-11-01T09%3A30%3A42Z&amp;se=2024-11-01T11%3A30%3A42Z&amp;sp=r&amp;sv=2024-08-04&amp;sr=b&amp;rscd=inline&amp;rsct=image/png&amp;skoid=d505667d-d6c1-4a0a-bac7-5c84a87759f8&amp;sktid=a48cca56-e6da-484e-a814-9c849652bcb3&amp;skt=2024-11-01T01%3A28%3A21Z&amp;ske=2024-11-02T01%3A28%3A21Z&amp;sks=b&amp;skv=2024-08-04&amp;sig=J6/e0vn5jbuxnkowAyemno/dpORbjpatjIMaGdNI1Ao%3D" width="30"/>
+         <span>
+          lllyasviel
+         </span>
+         <span class="ml-auto text-gray-500 text-xs">
+          5 days ago
+         </span>
+        </div>
+       </div>
+       <div class="bg-white rounded-lg shadow-md p-4">
+        <img alt="Kolors Virtual Try-On app interface" class="w-full h-40 object-cover mb-4 rounded-md" src="https://placehold.co/600x400.png?text=Kolors+Virtual+Try-On+app+interface"/>
+        <div class="flex items-center justify-between mb-2">
+         <h3 class="text-xl font-bold">
+          Kolors Virtual Try-On
+         </h3>
+         <div class="flex items-center">
+          <i class="fas fa-heart mr-2 text-red-500">
+          </i>
+          <span class="text-gray-500">
+           4.7k
+          </span>
+         </div>
+        </div>
+        <div class="flex items-center">
+         <img alt="Avatar of Kwai-Kolors" class="w-6 h-6 rounded-full mr-2" src="https://placehold.co/30x30"/>
+         <span>
+          Kwai-Kolors
+         </span>
+        </div>
+       </div>
+       <div class="bg-white rounded-lg shadow-md p-4">
+        <img alt="F5-TTS app for zero-shot voice cloning" class="w-full h-40 object-cover mb-4 rounded-md" height="400" src="https://oaidalleapiprodscus.blob.core.windows.net/private/org-wAWW9zoBnTeJ4DpbNYieMwU9/user-s3OeofjXigDPIRAgct8aXLk2/img-RAy8fJM42z0ccZidGIrAb1XC.png?st=2024-11-01T09%3A30%3A35Z&amp;se=2024-11-01T11%3A30%3A35Z&amp;sp=r&amp;sv=2024-08-04&amp;sr=b&amp;rscd=inline&amp;rsct=image/png&amp;skoid=d505667d-d6c1-4a0a-bac7-5c84a87759f8&amp;sktid=a48cca56-e6da-484e-a814-9c849652bcb3&amp;skt=2024-11-01T01%3A03%3A05Z&amp;ske=2024-11-02T01%3A03%3A05Z&amp;sks=b&amp;skv=2024-08-04&amp;sig=QKvLQt6WRNrpXAEiMnJ3n0wZjx734uR0JyfToiyJduA%3D" width="600"/>
+        <div class="flex items-center justify-between mb-2">
+         <h3 class="text-xl font-bold">
+          F5-TTS
+         </h3>
+         <div class="flex items-center">
+          <i class="fas fa-heart mr-2 text-red-500">
+          </i>
+          <span class="text-gray-500">
+           1.01k
+          </span>
+         </div>
+        </div>
+        <p class="text-gray-500 text-sm mb-3">
+         F5-TTS &amp; F2-TTS: Zero-Shot Voice Cloning (Unofficial Demo)
+        </p>
+        <div class="flex items-center">
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+   </div>
+  </body>
+ </html>
+</html>

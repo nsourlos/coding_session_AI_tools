@@ -1,0 +1,304 @@
+<html>
+<head>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <style>
+    /* Custom styles to match original app */
+    header {
+      background-color: #00a6d6;
+    }
+    header img {
+      width: 40px;
+      height: 40px;
+    }
+    header h1 {
+      font-size: 1.5rem;
+    }
+    header a {
+      font-size: 1.1rem;
+    }
+    aside {
+      background-color: #f2f2f2;
+      width: 300px;
+    }
+    aside a {
+      color: #333;
+      font-size: 1rem;
+      padding: 0.5rem 1rem;
+    }
+    aside a:hover {
+      background-color: #ddd;
+    }
+    aside .fa-chevron-down,
+    aside .fa-chevron-up {
+      color: #999;
+      font-size: 0.8rem;
+    }
+    main h1 {
+      color: #00a6d6;
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+    main p, main li {
+      color: #333;
+      font-size: 1.1rem;
+      line-height: 1.5;
+    }
+    footer {
+      background-color: #ddd;
+      font-size: 0.9rem;
+    }
+    #scroll-top {
+      bottom: 2rem;
+      right: 2rem;
+      display: none;
+    }
+    #under-construction {
+      background-color: #fc0;
+      color: #333;
+      font-size: 0.9rem;
+    }
+    #star-icon {
+      transition: color 0.3s;
+    }
+    #star-icon.fas {
+      color: #fc0;
+    }
+  </style>
+</head>
+<body>
+
+<header class="sticky top-0 flex justify-between items-center p-4 text-white">
+  <div class="flex items-center">
+    <img src="https://via.placeholder.com/50x50?text=Logo" alt="TU Delft logo" class="mr-4">
+    <h1>TU Delft</h1>
+  </div>
+  <nav>
+    <ul class="flex space-x-6">
+      <li><a href="#" class="hover:underline">Guides</a></li>
+      <li><a href="#support-staff" class="hover:underline">Support Staff</a></li>
+      <li><a href="#references" class="hover:underline">References</a></li>
+      <li><a href="#" class="hover:underline">Community</a></li>
+    </ul>
+  </nav>
+</header>
+
+<div class="flex">
+  <aside class="sticky top-0 p-4 overflow-y-auto max-h-screen">
+    <ul id="sidebar-menu">
+      <li>
+        <div class="flex justify-between items-center">
+          <a href="#getting-started" class="block font-bold">Getting started</a>
+        </div>
+      </li>
+      <li>
+        <div class="flex justify-between items-center">
+          <a href="#" class="block font-bold">Computing Infrastructure</a>
+          <i class="fas fa-chevron-down"></i>
+        </div>
+        <ul class="pl-4 hidden">
+          <li><a href="#remote-servers" class="block">Remote servers</a></li>
+          <li><a href="#" class="block">TU Delft GitLab</a></li>
+        </ul>
+      </li>
+      <li>
+        <div class="flex justify-between items-center">  
+          <a href="#" class="block font-bold">Data Management</a>
+          <i class="fas fa-chevron-down"></i>
+        </div>
+        <ul class="pl-4 hidden">
+          <li>
+            <a href="#data-management-getting-started" class="block">Getting started</a>
+            <div id="under-construction" class="px-2 py-1 rounded-full text-xs uppercase tracking-wide hidden">Under construction</div>
+          </li>
+          <li><a href="#" class="block">FAIR Data</a></li>
+          <li><a href="#" class="block">TU Delft Data storage</a></li>
+        </ul>
+      </li>
+      <li>
+        <div class="flex justify-between items-center">
+          <a href="#" class="block font-bold">Research Software</a>
+          <i class="fas fa-chevron-down"></i>
+        </div>
+        <ul class="pl-4 hidden">
+          <li><a href="#" class="block">Getting started</a></li>
+          <li><a href="#" class="block">FAIR Software</a></li>
+          <li><a href="#" class="block">Software testing</a></li>
+          <li><a href="#" class="block">Version control with git</a></li>
+          <li><a href="#" class="block">Working with containers</a></li>
+        </ul>
+      </li>
+      <li>
+        <div class="flex justify-between items-center">
+          <a href="#" class="block font-bold">Resources</a>
+          <i class="fas fa-chevron-down"></i>
+        </div>
+        <ul class="pl-4 hidden">
+          <li><a href="#" class="block">Courses and workshops</a></li>
+          <li><a href="#" class="block">Research Software Curriculum</a></li>
+          <li><a href="#" class="block">Tools</a></li>
+        </ul>
+      </li>
+    </ul>
+  </aside>
+  
+  <main class="flex-1 p-8">
+    <div id="getting-started">
+      <h1>Welcome to the DCC Guides!</h1>
+      
+      <p>These guides are an initiative from TU Delft Digital Competence Centre and aim to provide a comprehensive entrypoint to get you started with Research Computing, Research Data, and Research Software at TU Delft.</p>
+
+      <div class="bg-blue-100 p-4 my-4 rounded-md">
+        <i class="fas fa-info-circle mr-2"></i>
+        <span class="font-bold">Disclaimer</span>
+        <p class="mt-2">The guides are under active development and mainly in use as a useful resource for the support provided by the DCC. The content is a compilation of developed solutions, relevant links and resources, and documents produced by colleagues inside and outside TU Delft. This is not an official TU Delft website, but rather a place where we keep note of things we find important and useful to share.</p>
+      </div>
+
+      <p>The guides are split into a few major sections:</p>
+      <ul class="list-disc pl-6 mb-6">
+        <li>Computing Infrastructure contains information and guides on TU Delft ICT infrastructure.</li>
+        <li>Data Management contains information and guides on using TU Delft data storage options and best practices for FAIR data.</li> 
+        <li>Research Software contains information for creating FAIR research software.</li>
+        <li>Resources contains a collection of courses, workshops, and references.</li>
+      </ul>
+
+      <div class="bg-green-100 p-4 my-4 rounded-md">
+        <i class="fas fa-book mr-2"></i>
+        <span class="font-bold">Learn more and get involved</span>
+        <ul class="list-disc pl-6 mt-2">
+          <li>
+            <i class="fas fa-users mr-2"></i>
+            <span>Join the community</span>
+            <p>We welcome anyone to join us in improving our guides. To join, check out our contributing guide.</p>
+          </li>
+          <li>
+            <i class="fas fa-comments mr-2"></i>  
+            <span>Join the discussion</span>
+            <p>We have community discussions, talk about ideas, share general questions and develop solutions and feedback in our community forum.</p>
+          </li>
+          <li>
+            <i class="fas fa-exclamation-circle mr-2"></i>
+            <span>Open an issue</span>
+            <p>We track topic requests and bug-reports via GitHub issues.</p>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div id="remote-servers" class="hidden">
+      <h1>Remote servers</h1>
+      <p class="mb-4">LAST MODIFIED<br>October 17, 2024</p>
+      <p>TU Delf offers employees the use of Faculty Managed Servers. The only condition is that it is not possible to use these servers to set up services that are already provided by the basic services of SSC ICT. All Faculty Managed Servers available as standard are virtual.</p>
+      <p>Hosting Faculty Managed Servers includes:</p>
+      <ul class="list-disc pl-6 mb-6">
+        <li>ICT provides the server, operating service (Windows, Linux (Redhat Enterprise Linux (preferred), Ubuntu (LTS) and CentOS)) and network access.</li>
+        <li>The user manages the server and can install whatever he wants within the given conditions (see form ...) and is therefore provided with admin rights.</li>
+        <li>ICT provides backup, restore and virus scanning (Windows).</li>
+        <li>ICT ensures that the Operating System (OS) of the Server (e.g. security patches) is up to date except for Linux.</li>
+        <li>User has the freedom to concentrate on his own applications that are needed for research.</li>
+      </ul>
+      <p class="font-bold">Some use cases and examples</p>
+      <ul class="list-disc pl-6 mb-6">
+        <li>You might want to run an instance of a service. For example an ftp-server or a PostgreSQL database for your lab or research group, others.</li>
+        <li>You want to setup a server to host a static website or web application.</li>
+        <li>You need a server to execute Gitlab-runners</li>
+      </ul>
+      <p class="font-bold">General required skills</p>
+      <ul class="list-disc pl-6">
+        <li>Working with the command line, shell scripting and linux</li>
+        <li>Working remotely and securely using ssh</li>
+        <li>Transfer files from one computer to another</li>
+        <li>Working with containers</li>
+      </ul>
+    </div>
+
+    <div id="data-management-getting-started" class="hidden">
+      <h1>Getting started</h1>
+      <div id="under-construction" class="inline-block px-2 py-1 mb-4 rounded-full text-sm uppercase tracking-wide bg-yellow-200 text-yellow-800">Under construction</div>
+    </div>
+
+    <div id="support-staff" class="hidden">
+      <h1>Research Support Staff Guide</h1>
+      <p class="mb-4">LAST MODIFIED<br>October 17, 2024</p>
+      <p>Coming soon!</p>
+    </div>
+
+    <div id="references" class="hidden">
+      <h1>References</h1>  
+      <p>Coming soon!</p>
+    </div>
+  </main>
+</div>
+
+<footer class="sticky bottom-0 p-4 text-center">
+  <p>&copy; 2024 TU Delft Digital Competence Centre. Licensed under CC-BY-4.0.</p>
+  <p>If you find this content useful, please consider giving us a star on GitHub. <i id="star-icon" class="far fa-star text-yellow-500 text-2xl cursor-pointer"></i></p>
+</footer>
+
+<button id="scroll-top" class="fixed p-4 rounded-full bg-blue-600 text-white">
+  <i class="fas fa-chevron-up"></i>
+</button>
+
+<script>
+$(document).ready(function() {
+  // Smooth scrolling for navigation
+  $('a[href^="#"]').on('click', function(e) {
+    e.preventDefault();
+    var target = $(this.hash);
+    if (target.length) {
+      $('html, body').animate({
+        scrollTop: target.offset().top
+      }, 1000);
+    }
+  });
+
+  // Toggle sidebar submenus with animation
+  $('#sidebar-menu .fa-chevron-down').click(function() {
+    $(this).toggleClass('fa-chevron-down fa-chevron-up');
+    $(this).parent().next('ul').slideToggle();
+  });
+
+  // Load page content 
+  $('#sidebar-menu a').click(function(e) {
+    if ($(this).attr('href').startsWith('#')) {
+      e.preventDefault();
+      var target = $($(this).attr('href'));
+      if (target.length) {
+        $('main > div').hide();
+        target.show();
+      }
+    }
+  });
+
+  // Show/hide scroll to top button
+  $(window).scroll(function() {
+    if ($(this).scrollTop() > 100) {
+      $('#scroll-top').fadeIn();
+    } else {
+      $('#scroll-top').fadeOut();
+    }
+  });
+
+  // Scroll to top on button click
+  $('#scroll-top').click(function() {
+    $('html, body').animate({scrollTop: 0}, 1000);
+  });
+
+  // Star icon click animation
+  $('#star-icon').click(function() {
+    $(this).addClass('fas').removeClass('far');
+    setTimeout(() => $(this).addClass('far').removeClass('fas'), 1000);
+  });
+
+  // Show "Under construction" banner on "Getting started" under "Data Management"
+  $('#sidebar-menu a[href="#data-management-getting-started"]').parent().mouseenter(function() {
+    $(this).find('#under-construction').fadeIn();  
+  }).mouseleave(function() {
+    $(this).find('#under-construction').fadeOut();
+  });
+});  
+</script>
+
+</body>
+</html>
