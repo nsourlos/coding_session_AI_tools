@@ -64,7 +64,7 @@ Based on Aravind Srinivas - CEO of Perplexity (Post on X on 16 October 2024), Go
 
 ### 4.AI Web Scraping (Tutorial in notebook)
 
-<img src="DCC_guides_QR.png" alt="Description of image" style="width:40%; height:auto; display:block; margin-left:auto; margin-right:auto;">
+<img src="websites_images_videos/DCC_guides_QR.png" alt="Description of image" style="width:40%; height:auto; display:block; margin-left:auto; margin-right:auto;">
 
 1) ***[ScrapeGraph](https://github.com/ScrapeGraphAI/Scrapegraph-ai)***:
 
@@ -97,12 +97,12 @@ Based on Aravind Srinivas - CEO of Perplexity (Post on X on 16 October 2024), Go
    - Expensive (~1.5$ for a html page (with images ~+0.3$) - DCC guides created from a 6-7 secs video, and HuggingFace page from a 16sec video, creation took 7mins)
 
    <video width="640" height="360" controls>
-     <source src="HuggingFace_page.mp4" type="video/mp4">
+     <source src="websites_images_videos/HuggingFace_page.mp4" type="video/mp4">
    </video>
 
-   **[Example Rendering 1: DCC Guides page](./DCC_guides_page.html)**
+   **[Example Rendering 1: DCC Guides page](./websites_images_videos/DCC_guides_page.html)**
 
-   **[Example Rendering 2: HuggingFace page](./HuggingFace_page.html)**
+   **[Example Rendering 2: HuggingFace page](./websites_images_videos/HuggingFace_page.html)**
 
    Installation instructions [here](./Screenshot_to_code.txt)
 
@@ -168,10 +168,10 @@ Based on Aravind Srinivas - CEO of Perplexity (Post on X on 16 October 2024), Go
 <div style="display: flex; justify-content: space-between;">
     <div>
         <p>Deepfakes Repository</p>
-        <img src="DeepFakes_Colab.png" alt="Description of image" style="width:90%; height:auto;">
+        <img src="websites_images_videos/DeepFakes_Colab.png" alt="Description of image" style="width:90%; height:auto;">
     </div>
     <div>
         <p>AI QR Codes Repository</p>
-        <img src="QR_codes_Colab.png" alt="Description of image" style="width:90%; height:auto;">
+        <img src="websites_images_videos/QR_codes_Colab.png" alt="Description of image" style="width:90%; height:auto;">
     </div>
 </div>
