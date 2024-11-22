@@ -162,3 +162,16 @@ Based on Aravind Srinivas - CEO of Perplexity (Post on X on 16 October 2024), Go
 
 8) ***[Manim](https://github.com/3b1b/manim)***
    - 3blue1brown animation
+
+## DeepFakes and AI QR Codes
+
+<div style="display: flex; justify-content: space-between;">
+    <div>
+        <p>Deepfakes Repository</p>
+        <img src="DeepFakes_Colab.png" alt="Description of image" style="width:90%; height:auto;">
+    </div>
+    <div>
+        <p>AI QR Codes Repository</p>
+        <img src="QR_codes_Colab.png" alt="Description of image" style="width:90%; height:auto;">
+    </div>
+</div>
